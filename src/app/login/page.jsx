@@ -1,26 +1,91 @@
+"use client";
+
+import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+
 export default function Login() {
+  const [form, setForm] = useState({ email: "", password: "", remember: false });
+  const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!form.email) newErrors.email = "Email is required.";
+    if (!form.password) newErrors.password = "Password is required.";
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length === 0) {
+      console.log("Login submitted", form);
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f5f5f5] px-4">
       <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
         <h1 className="text-2xl font-bold text-brand-navy mb-6">Welcome Back</h1>
 
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
             <input
               type="email"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-brand-orange"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                errors.email ? "border-red-500 focus:ring-red-500" : "focus:ring-brand-orange"
+              }`}
               placeholder="you@example.com"
             />
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
             <input
-              type="password"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-brand-orange"
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                errors.password ? "border-red-500 focus:ring-red-500" : "focus:ring-brand-orange"
+              }`}
               placeholder="••••••••"
             />
+            <div className="text-sm text-right mt-1">
+              <button
+                type="button"
+                className="text-brand-orange hover:underline"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "Hide Password" : "Show Password"}
+              </button>
+            </div>
+            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+          </div>
+
+          <div className="flex items-center justify-between">
+            <label className="flex items-center text-sm text-gray-700">
+              <input
+                type="checkbox"
+                name="remember"
+                checked={form.remember}
+                onChange={handleChange}
+                className="mr-2"
+              />
+              Remember me
+            </label>
+            <a href="#" className="text-sm text-brand-orange hover:underline">Forgot password?</a>
           </div>
 
           <button
@@ -31,7 +96,14 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="text-sm text-center text-gray-600 mt-4">
+        <div className="mt-6 text-center space-y-3">
+          <p className="text-sm text-gray-500">Or continue with</p>
+          <button className="flex items-center justify-center w-full px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">
+            <FcGoogle className="mr-2 text-xl" /> Login with Google
+          </button>
+        </div>
+
+        <p className="text-sm text-center text-gray-600 mt-6">
           Don't have an account?{' '}
           <a href="/signup" className="text-brand-orange hover:underline">
             Sign up here
