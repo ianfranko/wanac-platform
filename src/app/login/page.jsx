@@ -2,15 +2,24 @@
 
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
-  const [form, setForm] = useState({ email: "", password: "", remember: false });
+  const router = useRouter();
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+    remember: false,
+  });
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
   const validate = () => {
@@ -24,8 +33,10 @@ export default function Login() {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
+
     if (Object.keys(validationErrors).length === 0) {
-      console.log("Login submitted", form);
+      console.log("Login successful!", form);
+      router.push("/dashboard"); // 👈 Redirect after success (DEV only)
     }
   };
 
@@ -35,6 +46,7 @@ export default function Login() {
         <h1 className="text-2xl font-bold text-brand-navy mb-6">Welcome Back</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
             <input
@@ -42,14 +54,17 @@ export default function Login() {
               name="email"
               value={form.email}
               onChange={handleChange}
+              placeholder="you@example.com"
               className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
                 errors.email ? "border-red-500 focus:ring-red-500" : "focus:ring-brand-orange"
               }`}
-              placeholder="you@example.com"
             />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
           </div>
 
+          {/* Password */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
             <input
@@ -57,10 +72,10 @@ export default function Login() {
               name="password"
               value={form.password}
               onChange={handleChange}
+              placeholder="••••••••"
               className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
                 errors.password ? "border-red-500 focus:ring-red-500" : "focus:ring-brand-orange"
               }`}
-              placeholder="••••••••"
             />
             <div className="text-sm text-right mt-1">
               <button
@@ -71,9 +86,12 @@ export default function Login() {
                 {showPassword ? "Hide Password" : "Show Password"}
               </button>
             </div>
-            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+            )}
           </div>
 
+          {/* Remember Me + Forgot */}
           <div className="flex items-center justify-between">
             <label className="flex items-center text-sm text-gray-700">
               <input
@@ -85,9 +103,12 @@ export default function Login() {
               />
               Remember me
             </label>
-            <a href="#" className="text-sm text-brand-orange hover:underline">Forgot password?</a>
+            <a href="#" className="text-sm text-brand-orange hover:underline">
+              Forgot password?
+            </a>
           </div>
 
+          {/* Login Button */}
           <button
             type="submit"
             className="w-full bg-brand-orange text-white py-2 rounded-md font-semibold hover:bg-orange-500 transition"
@@ -96,6 +117,7 @@ export default function Login() {
           </button>
         </form>
 
+        {/* Divider + Google Login */}
         <div className="mt-6 text-center space-y-3">
           <p className="text-sm text-gray-500">Or continue with</p>
           <button className="flex items-center justify-center w-full px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">
@@ -103,8 +125,9 @@ export default function Login() {
           </button>
         </div>
 
+        {/* Sign up link */}
         <p className="text-sm text-center text-gray-600 mt-6">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{" "}
           <a href="/signup" className="text-brand-orange hover:underline">
             Sign up here
           </a>
