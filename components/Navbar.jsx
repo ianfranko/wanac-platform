@@ -167,7 +167,7 @@ export default function Navbar() {
             Resources
           </Link>
           <Link
-            href="#about"
+            href="about"
             className="block text-black font-medium hover:text-orange-500"
           >
             About
