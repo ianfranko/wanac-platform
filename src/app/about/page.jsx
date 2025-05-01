@@ -1,55 +1,102 @@
-import Link from "next/link";
+import React from "react";
 
-export default function About() {
+const OurStory = () => {
   return (
-    <div className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-brand-navy mb-4">About WANAC</h1>
-      <p className="text-lg text-gray-700 leading-relaxed mb-6">
-        WANAC (Warrior Ascension Network and Coaching) is a veteran-founded platform committed to transforming the post-service journey of military veterans through structured coaching, intelligent technology, and a vibrant support community.
-      </p>
+    <div className="bg-white text-gray-800">
+      {/* Header */}
+      <header className=" text-white py-10 text-center">
+        <h1 className="text-4xl text-[#002147] font-bold">Our Story</h1>
+      </header>
 
-      <p className="text-gray-700 mb-6">
-        Launched by U.S. veteran <strong>Clarence Narcisse</strong> and developed by a global team led by <strong>Ian Odundo</strong>, WANAC equips veterans with the tools they need to thrive. From <Link href="/coaching-programs" className="text-brand-navy underline">structured coaching programs</Link> and <Link href="/life-score" className="text-brand-navy underline">life score assessments</Link> to AI-driven journaling and an Eisenhower Matrix-powered <Link href="/task-manager" className="text-brand-navy underline">task manager</Link>, we guide users through a full-circle growth journey.
-      </p>
+      {/* Main Content */}
+<main className="px-6 md:px-16 py-10 space-y-12">
+  {/* Intro Section */}
+  <section className="bg-gray-50 p-6 rounded-lg shadow-md">
+    <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-blue-600 pl-4">
+      About Warrior Rising
+    </h2>
+    <p className="mb-4 text-gray-700 text-lg leading-relaxed">
+      <span className="font-semibold">Founded in 2015</span>, Warrior Rising is a 
+      <span className="text-blue-600 font-medium"> nonprofit started by Veterans, for Veterans</span>. 
+      Our mission is simple but powerful: 
+      <span className="italic">transform Veterans into Vetrepreneurs</span>—veteran entrepreneurs.
+    </p>
+    <p className="text-gray-700 text-lg leading-relaxed">
+      What began as a local initiative has now 
+      <span className="font-semibold text-blue-600"> grown into a nationally recognized organization</span>, 
+      helping veterans transition from the 
+      <span className="italic">battlefield to the boardroom</span>.
+    </p>
+  </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-        <div>
-          <h2 className="text-xl font-semibold text-brand-navy mb-2">Who We Are</h2>
-          <ul className="list-disc ml-5 text-gray-600 space-y-1">
-            <li><Link href="/our-story" className="hover:underline">Our Story</Link></li>
-            <li><Link href="/leadership" className="hover:underline">Executive Leadership Team</Link></li>
-            <li><Link href="/board" className="hover:underline">Board of Directors</Link></li>
-            <li><Link href="/advisory-board" className="hover:underline">Veteran Advisory Board</Link></li>
-          </ul>
-        </div>
+        {/* Origins Section */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">Origins</h2>
+          <p className="italic mb-2">Warrior Rising is a Family</p>
+          <p>
+            Our mission began with the belief that Veterans are uniquely equipped to succeed in
+            entrepreneurship. We empower them by sharing stories of resilience, purpose, and
+            leadership.
+          </p>
+        </section>
 
-        <div>
-          <h2 className="text-xl font-semibold text-brand-navy mb-2">What We Offer</h2>
-          <ul className="list-disc ml-5 text-gray-600 space-y-1">
-            <li><Link href="/coaching-programs" className="hover:underline">AI-enhanced Coaching Programs</Link></li>
-            <li><Link href="/life-score" className="hover:underline">Veteran Life Score Assessments</Link></li>
-            <li><Link href="/task-manager" className="hover:underline">Task & Goal Management Tools</Link></li>
-            <li><Link href="/community" className="hover:underline">Community, Events & Support Resources</Link></li>
-          </ul>
-        </div>
-      </div>
+        {/* Founder Section */}
+        <section className="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="https://www.warriorrising.org/wp-content/uploads/2020/01/Jason-Van-Camp.jpg"
+            alt="Jason B.A. Van Camp, Founder of Warrior Rising"
+            className="w-64 rounded-lg shadow-lg"
+          />
+          <div>
+            <h2 className="text-2xl font-semibold mb-1">Our Founder</h2>
+            <h3 className="text-lg font-medium mb-3">Jason B.A. Van Camp</h3>
+            <p className="mb-2">
+              Jason B.A. Van Camp is a decorated U.S. Special Forces Officer (Green Beret), West
+              Point graduate, and seasoned business leader. His leadership inspired the founding of
+              Warrior Rising as a platform to uplift his fellow veterans.
+            </p>
+            <a
+              href="https://www.warriorrising.org/our-story/"
+              className="text-blue-700 underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read Founder’s Full Bio
+            </a>
+          </div>
+        </section>
 
-      <div className="mt-10 flex flex-col gap-4">
-        <Link href="/book-session">
-          <button className="bg-brand-navy text-white py-3 px-6 rounded-2xl shadow hover:bg-brand-navy/90 transition">
-            Book a Coaching Session
-          </button>
-        </Link>
-        <Link href="/free-strategy-session" className="text-brand-navy underline text-sm text-center">
-          Or claim your Free Strategy Session →
-        </Link>
-      </div>
+        {/* Decade Section */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">Celebrating a Decade</h2>
+          <p>
+            After 10 years of impact, Warrior Rising continues to support military veterans in their
+            journeys toward becoming business leaders. We've built a community where purpose meets
+            opportunity.
+          </p>
+        </section>
 
-      <div className="mt-10 text-gray-600">
-        <p className="italic">
-          “Veterans don’t need to walk the transition alone. At WANAC, we turn challenges into chapters of growth.”
-        </p>
-      </div>
+        {/* Donate Section */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-2">Empowering Veterans</h2>
+          <p className="mb-2">
+            We believe in equipping Veterans with the tools, knowledge, and mentorship needed to
+            thrive in the business world.
+          </p>
+          <a
+            href="https://www.warriorrising.org/donate/"
+            className="inline-block bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Donate Today
+          </a>
+        </section>
+      </main>
+
+  
     </div>
   );
-}
+};
+
+export default OurStory;

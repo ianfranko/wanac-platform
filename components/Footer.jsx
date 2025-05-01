@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-navy text-white pt-16 pb-10 px-6">
+    <footer className="bg-white text[#002147] pt-16 pb-10 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
         <div>
-          <Image src="/logo.svg" alt="WANAC Logo" width={100} height={40} className="mb-6" />
+          <Image src="public/WANAC N 8 Old Glory.svg"  width={100} height={40} className="mb-6" />
           <ul className="space-y-3 text-sm font-semibold">
             <li>WAYS TO SUPPORT</li>
             <li>WISHBOOK</li>
@@ -49,10 +49,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-center text-xs text-gray-400 mt-10 border-t border-gray-700 pt-6">
+      <div className="text-center text-xs text-brand-blue mt-10 border-t border-gray-700 pt-6">
         <p className="mb-2">The WANAC Platform is a not-for-profit organization. </p>
         <p className="mb-2">+1 (888) 484 3876 | PO Box 96860 Washington, DC 20077-7677</p>
-        <div className="flex flex-wrap justify-center gap-4 mt-4 text-gray-400">
+        <div className="flex flex-wrap justify-center gap-4 mt-4 text-brand-blue">
           <span>Contact</span>
           <span>FAQs</span>
           <span>Terms of Use</span>

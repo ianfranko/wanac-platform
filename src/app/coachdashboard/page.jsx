@@ -4,7 +4,7 @@ import { FaUser, FaHome, FaCalendarCheck, FaEnvelope, FaBook, FaComments, FaCog,
 
 export default function CoachDashboard() {
   return (
-    <section className="min-h-screen bg-gray-50 flex">
+    <section className="min-h-screen bg-brand-blue flex">
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-xl py-8 px-6">
         <div className="flex flex-col items-start space-y-6">
@@ -17,31 +17,31 @@ export default function CoachDashboard() {
             <FaHome /> <span>Dashboard</span>
           </Link>
 
-          <Link href="/bookings" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/bookings" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaCalendarCheck /> <span>Bookings</span>
           </Link>
 
-          <Link href="/messages" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/messages" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaEnvelope /> <span>Messages</span>
           </Link>
 
-          <Link href="/notes" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/notes" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaClipboardList /> <span>Session Notes</span>
           </Link>
 
-          <Link href="/calendar" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/calendar" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaClock /> <span>Calendar</span>
           </Link>
 
-          <Link href="/resources" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/resources" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaBookOpen /> <span>Resources</span>
           </Link>
 
-          <Link href="/ai-chatbot" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/ai-chatbot" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaBrain /> <span>AI Chatbot</span>
           </Link>
 
-          <Link href="/settings" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/settings" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaCog /> <span>Settings</span>
           </Link>
         </div>
@@ -58,8 +58,8 @@ export default function CoachDashboard() {
               <h2 className="text-xl font-semibold text-brand-navy mb-2 flex items-center gap-2">
                 <FaCalendarCheck /> Next Session
               </h2>
-              <p className="text-gray-600 text-sm">With: John Doe</p>
-              <p className="text-gray-600 text-sm">Date: Apr 5, 2025 – 3:00PM</p>
+              <p className="text-brand-blue text-sm">With: John Doe</p>
+              <p className="text-brand-blue text-sm">Date: Apr 5, 2025 – 3:00PM</p>
               <button className="mt-4 bg-brand-orange text-white px-4 py-2 rounded hover:bg-orange-500 transition">
                 View Details
               </button>
@@ -70,7 +70,7 @@ export default function CoachDashboard() {
               <h2 className="text-xl font-semibold text-brand-navy mb-2 flex items-center gap-2">
                 <FaClipboardList /> Session Notes
               </h2>
-              <p className="text-gray-600 text-sm mb-4">Add or review coaching session notes.</p>
+              <p className="text-brand-blue text-sm mb-4">Add or review coaching session notes.</p>
               <button className="bg-brand-navy text-white px-4 py-2 rounded hover:bg-blue-800 transition">
                 Go to Notes
               </button>
@@ -81,7 +81,7 @@ export default function CoachDashboard() {
               <h2 className="text-xl font-semibold text-brand-navy mb-2 flex items-center gap-2">
                 <FaComments /> AI Suggestions
               </h2>
-              <p className="italic text-gray-700">"Encourage your client to reflect on weekly energy levels."</p>
+              <p className="italic text-brand-blue">"Encourage your client to reflect on weekly energy levels."</p>
               <button className="mt-3 text-sm text-brand-orange hover:underline">See More Suggestions</button>
             </div>
 
@@ -90,7 +90,7 @@ export default function CoachDashboard() {
               <h2 className="text-xl font-semibold text-brand-navy mb-2 flex items-center gap-2">
                 <FaClock /> Your Calendar
               </h2>
-              <p className="text-gray-600 text-sm mb-2">View and manage availability</p>
+              <p className="text-brand-blue text-sm mb-2">View and manage availability</p>
               <button className="bg-brand-orange text-white px-4 py-2 rounded hover:bg-orange-500 transition">
                 Open Calendar
               </button>
@@ -101,7 +101,7 @@ export default function CoachDashboard() {
               <h2 className="text-xl font-semibold text-brand-navy mb-2 flex items-center gap-2">
                 <FaBookOpen /> Resources
               </h2>
-              <p className="text-gray-600 text-sm mb-2">Access coaching materials and tools.</p>
+              <p className="text-brand-blue text-sm mb-2">Access coaching materials and tools.</p>
               <button className="bg-brand-navy text-white px-4 py-2 rounded hover:bg-blue-800 transition">
                 Go to Library
               </button>

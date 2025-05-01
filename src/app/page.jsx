@@ -1,4 +1,4 @@
-// src/pages/index.jsx
+// WANAC Coaching Platform - Home Page
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,114 +7,133 @@ import LifeScorePreview from '../../components/LifeScorePreview';
 import AIAssistantDemo from '../../components/AIAssistantDemo';
 import SessionBookingPreview from '../../components/SessionBookingPreview';
 import CommunitySnapshot from '../../components/CommunitySnapshot';
-import { motion } from "framer-motion"; 
-
-
 
 export default function Home() {
   return (
-    <div className="bg-brand-white text-brand-navy">
+    <div className="bg-background text-foreground">
       <Head>
         <title>WANAC Coaching Platform</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       {/* Hero Section */}
-      <section className="min-h-[70vh] flex flex-col justify-center items-center px-6 text-center bg-brand-navy text-white transition-opacity duration-1000 ease-in-out animate-fade-in">
-        <h1 className="text-4xl md:text-5xl font-bold max-w-2xl leading-tight">
-          Empowering Veterans Through Coaching and Community Support
+      <section className="min-h-[80vh] flex flex-col justify-center items-center px-6 text-center bg-[#002147] text-white py-24">
+
+        <h1 className="text-5xl font-extrabold max-w-3xl leading-tight uppercase tracking-wide text-heading">
+        Empowering Service Members and Veterans through couching and community support
         </h1>
-        <p className="text-lg mt-4 max-w-xl">
-          Personalized coaching, smart AI tools, and an empowering community to help you thrive after service.
+        <p className="text-lg mt-4 max-w-xl text-white">
+        Personalised coaching, AI tools and community to help you thrive after Service.
         </p>
         <div className="mt-6 space-x-4">
-          <Link href="/signup" className="bg-brand-orange px-6 py-3 rounded-xl text-white font-semibold hover:bg-orange-500 transition-all">
-            Free Strategy Session
+          <Link href="/signup" className="bg-accent text-white px-6 py-3 rounded-md font-semibold uppercase tracking-wide hover:bg-hover transition-all">
+            Get Started
           </Link>
-          <Link href="/donate" className="border-2 border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-brand-navy transition-all">
-            Donate
+          <Link href="/donate" className="border-2 border-white px-6 py-2 rounded font-semibold hover:bg-white hover:text-background transition-all">
+            Log In
           </Link>
         </div>
-      </section>
-
-      {/* Guided Boarding Intro + Life Score Preview */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-6 py-16">
-        <GuidedBoardingIntro />
-        <LifeScorePreview />
       </section>
 
       {/* How We Help */}
-      <section id="how-we-help" className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-6">How We Help</h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {[{
-            title: 'Phase 1',
-            desc: 'Promise Land Transition Coaching Program'
-          }, {
-            title: 'Phase 2',
-            desc: 'High Performance Coaching Sessions'
-          }, {
-            title: 'Phase 3',
-            desc: 'Coaching Business Academy for Veterans'
-          }].map(({ title, desc }) => (
-            <div key={title} className="bg-white shadow rounded-xl p-6 transition-transform transform hover:scale-105 duration-300">
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Session Booking Preview + AI Assistant Demo */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-6 py-16">
-        <SessionBookingPreview />
-        <AIAssistantDemo />
-      </section>
-
-      {/* Community Snapshot + Testimonials */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-6 py-16">
-        <CommunitySnapshot />
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-2xl font-semibold mb-4">Veteran Voices</h2>
-          <blockquote className="italic text-gray-800">
-            “WANAC helped me rediscover my strength and purpose after leaving the military. The coaching was transformative.”
-            <footer className="mt-4 font-semibold">— U.S. Army Veteran</footer>
-          </blockquote>
-        </div>
-      </section>
-
-    {/* Community CTA Section */}
-<section id="community" className="px-6 py-16 bg-[#f9f9f9]">
-    <h2 className="text-3xl font-semibold mb-4">Join Our Community of Veterans</h2>
-    <p className="mb-6 text-sm text-gray-200">
-      Support our mission to empower veterans through coaching, resources, and community engagement.
-    </p>
-    
-    <div className="flex justify-center space-x-4">
-      <button className="bg-white text-brand-navy font-medium px-5 py-2 rounded-full hover:bg-gray-200 transition">
-        Sign Up
-      </button>
-      <button className="bg-white text-brand-navy font-medium px-5 py-2 rounded-full hover:bg-gray-200 transition">
-        Donate
-      </button>
+      <section id="how-we-help" className="py-20 px-6 bg-white text-center">
+      <h2 className="text-4xl font-bold mb-12 uppercase text-[#002147]">How We Help</h2>
+      <div className="grid md:grid-cols-3 text-white gap-6 max-w-6xl mx-auto">
+  {[{
+    title: 'Transition Coaching',
+    desc: 'Helping veterans navigate life after service with clarity and confidence.'
+  }, {
+    title: 'Performance Coaching',
+    desc: 'Equipping veterans to thrive personally and professionally.'
+  }, {
+    title: 'Coaching Academy',
+    desc: 'Training veterans to become certified coaches and mentors.'
+  }].map(({ title, desc }) => (
+    <div key={title} className="bg-[#002147] text-foreground shadow-md rounded-xl p-6 hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold mb-2 text-heading">{title}</h3>
+      <p className="text-foreground/70">{desc}</p>
     </div>
+  ))}
+</div>
+
+      </section>
+
+      <section className="py-20 px-6 bg-[#002147] text-white">
+  <div className="max-w-7xl mx-auto text-center">
+    {/* Section Title */}
+    <h2 className="text-3xl font-semibold mb-8">Key Features of Our Web App</h2>
+    <p className="text-lg mb-12">Discover the powerful features that make our web app the best choice for your needs.</p>
+
+    {/* Features Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
+      {/* Feature 1 */}
+      <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+        <div className="mb-6">
+          <img src="/icons/session-booking.svg" alt="Session Booking" className="w-16 h-16 mx-auto" />
+        </div>
+        <h3 className="text-2xl font-semibold mb-4">Session Booking</h3>
+        <p className="text-lg text-gray-700">Easily book your sessions with a simple, intuitive interface that guarantees a smooth user experience.</p>
+      </div>
+
+      {/* Feature 2 */}
+      <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+        <div className="mb-6">
+          <img src="/icons/ai-assistant.svg" alt="AI Assistant" className="w-16 h-16 mx-auto" />
+        </div>
+        <h3 className="text-2xl font-semibold mb-4">AI Assistant</h3>
+        <p className="text-lg text-gray-700">Get personalized assistance with our AI-driven assistant, designed to streamline your tasks and improve productivity.</p>
+      </div>
+
+      {/* Feature 3 */}
+      <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+        <div className="mb-6">
+          <img src="/icons/real-time-updates.svg" alt="Real-Time Updates" className="w-16 h-16 mx-auto" />
+        </div>
+        <h3 className="text-2xl font-semibold mb-4">Real-Time Updates</h3>
+        <p className="text-lg text-gray-700">Stay informed with real-time notifications and updates, ensuring you're always in the loop.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-      {/* AI Assistant */}
-      <section id="ai-assistant" className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-4">AI Assistant</h2>
-        <p className="max-w-xl mx-auto text-gray-700">
-          Our Smart Concierge AI helps you stay focused and organized — available based on your membership tier.
-        </p>
+      {/* Community and Testimonial */}
+      <section className="py-20 px-6 bg-background">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <CommunitySnapshot />
+          <div className="bg-white p-6 rounded-xl shadow">
+            <h2 className="text-2xl font-semibold mb-4 text-heading">Veteran Voices</h2>
+            <blockquote className="italic text-foreground">
+              “WANAC helped me rediscover my strength and purpose after leaving the military.”
+              <footer className="mt-4 font-semibold">— U.S. Army Veteran</footer>
+            </blockquote>
+          </div>
+        </div>
       </section>
 
-      {/* Account Settings */}
-      <section id="account-settings" className="py-16 px-6 text-center bg-gray-50">
-        <h2 className="text-3xl font-semibold mb-4">Account Settings</h2>
-        <ul className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left text-gray-700">
-          <li>Update Profile</li>
-          <li>Manage Subscriptions</li>
-          <li>Notification Preferences</li>
+      {/* Community CTA */}
+      <section id="community" className="bg-background text-white text-center py-20 px-6">
+  <h2 className="text-4xl font-bold mb-4 uppercase">Join Our Community</h2>
+  <p className="mb-6 max-w-2xl mx-auto">
+    Discover upcoming events, connect with fellow veterans, and make an impact.
+  </p>
+  <div className="flex justify-center gap-4">
+    <Link href="/signup" className="bg-accent text-white px-6 py-3 rounded font-semibold hover:bg-hover transition-all">
+      Sign Up
+    </Link>
+    <Link href="/donate" className="bg-white text-[#002147] text-heading px-6 py-3 rounded font-semibold hover:bg-gray-200 transition-all">
+      Donate
+    </Link>
+  </div>
+</section>
+
+
+      {/* Final Section */}
+      <section className="py-20 px-6 text-center bg-[#002147]">
+        <h2 className="text-3xl font-bold mb-6 uppercase text-[white] text-heading">Manage Your Experience</h2>
+        <ul className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left text-[white] font-medium">
+          <li>Update your coaching preferences</li>
+          <li>Manage subscriptions and sessions</li>
+          <li>Control notification settings</li>
         </ul>
       </section>
     </div>

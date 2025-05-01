@@ -17,39 +17,39 @@ export default function Dashboard() {
             <FaHome /> <span>Minutes</span>
           </Link>
 
-          <Link href="/discover" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/discover" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaHome /> <span>Discover</span>
           </Link>
 
-          <Link href="/bookings" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/bookings" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaCalendarCheck /> <span>Bookings</span>
           </Link>
 
-          <Link href="/messages" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/messages" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaEnvelope /> <span>Messages</span>
           </Link>
 
-          <Link href="/library" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/library" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaBook /> <span>Library</span>
           </Link>
 
-          <Link href="/ai-chatbot" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/ai-chatbot" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaBrain /> <span>AI Chatbot</span>
           </Link>
 
-          <Link href="/journal" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/journal" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaPenFancy /> <span>Journal</span>
           </Link>
 
-          <Link href="/community" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/community" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaUsers /> <span>Community</span>
           </Link>
 
-          <Link href="/life-score" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/life-score" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaBrain /> <span>Life Scores</span>
           </Link>
 
-          <Link href="/settings" className="flex items-center gap-3 text-gray-700 hover:text-brand-navy hover:font-bold cursor-pointer">
+          <Link href="/settings" className="flex items-center gap-3 text-brand-blue hover:text-brand-navy hover:font-bold cursor-pointer">
             <FaCog /> <span>Settings</span>
           </Link>
         </div>
@@ -64,8 +64,8 @@ export default function Dashboard() {
             {/* Life Score Snapshot */}
             <div className="bg-white rounded-xl shadow p-6 hover:shadow-lg hover:scale-[1.01] transition-transform duration-300 cursor-pointer">
               <h2 className="text-xl font-semibold text-brand-navy mb-2">Life Score</h2>
-              <p className="text-gray-600 text-sm">Your latest assessment results.</p>
-              <div className="mt-4 text-sm text-gray-700 space-y-2">
+              <p className="text-brand-blue text-sm">Your latest assessment results.</p>
+              <div className="mt-4 text-sm text-brand-blue space-y-2">
                 <p>🧠 Mental & Emotional: 7/10</p>
                 <p>⚡ Energy: 4/5</p>
                 <p>🎯 Mission: 6/10</p>
@@ -76,7 +76,7 @@ export default function Dashboard() {
             {/* Next Coaching Session */}
             <div className="bg-white rounded-xl shadow p-6 hover:shadow-lg hover:scale-[1.01] transition-transform duration-300 cursor-pointer">
               <h2 className="text-xl font-semibold text-brand-navy mb-2">Next Coaching Session</h2>
-              <p className="text-gray-600 text-sm">Scheduled for: Apr 3, 2025 – 10:00AM</p>
+              <p className="text-brand-blue text-sm">Scheduled for: Apr 3, 2025 – 10:00AM</p>
               <button className="mt-4 bg-brand-orange text-white px-4 py-2 rounded hover:bg-orange-500 transition">
                 View Details
               </button>
@@ -109,7 +109,7 @@ export default function Dashboard() {
             {/* Journal Widget */}
             <div className="bg-white rounded-xl shadow p-6 hover:shadow-lg hover:scale-[1.01] transition-transform duration-300 cursor-pointer">
               <h2 className="text-xl font-semibold text-brand-navy mb-2">Today’s Journal</h2>
-              <p className="text-gray-600 text-sm mb-2">Morning Mindset Entry Available</p>
+              <p className="text-brand-blue text-sm mb-2">Morning Mindset Entry Available</p>
               <button className="bg-brand-navy text-white px-4 py-2 rounded hover:bg-blue-800 transition">
                 Write Now
               </button>
@@ -118,7 +118,7 @@ export default function Dashboard() {
             {/* AI Insight of the Day */}
             <div className="bg-white rounded-xl shadow p-6 hover:shadow-lg hover:scale-[1.01] transition-transform duration-300 cursor-pointer">
               <h2 className="text-xl font-semibold text-brand-navy mb-2">AI Insight of the Day</h2>
-              <p className="italic text-gray-700">
+              <p className="italic text-brand-blue">
                 "Today, prioritize clarity over chaos. A clear mind moves faster."
               </p>
               <button className="mt-3 text-sm text-brand-orange hover:underline">See Full Insight</button>
