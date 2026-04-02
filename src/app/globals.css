@@ -1,0 +1,432 @@
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+@import "./responsive-utils.css";
+@import "tw-animate-css";
+/* ---break---  */
+@custom-variant dark (&:is(.dark *));
+
+/* Light Theme Defaults  */
+:root {
+  --accent: oklch(0.967 0.003 264.542);
+  --hover: #3366FF;
+  --font-heading: 'Montserrat', 'Arial', sans-serif;
+  --font-body: 'Source Sans Pro', 'Arial', sans-serif;
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.13 0.028 261.692);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0.028 261.692);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0.028 261.692);
+  --primary: oklch(0.21 0.034 264.665);
+  --primary-foreground: oklch(0.985 0.002 247.839);
+  --secondary: oklch(0.967 0.003 264.542);
+  --secondary-foreground: oklch(0.21 0.034 264.665);
+  --muted: oklch(0.967 0.003 264.542);
+  --muted-foreground: oklch(0.551 0.027 264.364);
+  --accent-foreground: oklch(0.21 0.034 264.665);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.928 0.006 264.531);
+  --input: oklch(0.928 0.006 264.531);
+  --ring: oklch(0.707 0.022 261.325);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0.002 247.839);
+  --sidebar-foreground: oklch(0.13 0.028 261.692);
+  --sidebar-primary: oklch(0.21 0.034 264.665);
+  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-accent: oklch(0.967 0.003 264.542);
+  --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
+  --sidebar-border: oklch(0.928 0.006 264.531);
+  --sidebar-ring: oklch(0.707 0.022 261.325);
+  /* Breakout-style shell and cards */
+  --core-tertiary: #ffffff;
+  --core-on-tertiary: #1f2937;
+  --surface: #f3f4f6;
+  --breakout-accent: #ffca00;
+  --breakout-accent-hover: #ffd633;
+  --breakout-muted: #f8f8f8;
+  --breakout-border: #e5e7eb;
+}
+
+/* Tailwind Theme Token Aliases */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-hover: var(--hover);
+  --font-sans: var(--font-heading);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-core-tertiary: var(--core-tertiary);
+  --color-core-on-tertiary: var(--core-on-tertiary);
+  --color-surface: var(--surface);
+  --color-breakout-accent: var(--breakout-accent);
+  --color-breakout-accent-hover: var(--breakout-accent-hover);
+  --color-breakout-muted: var(--breakout-muted);
+  --color-breakout-border: var(--breakout-border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #EE8220;
+    --hover: #3366FF;
+  }
+}
+@font-face {
+  font-family: 'Whitney';
+  src: url('/fonts/whitney-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney';
+  src: url('/fonts/whitney-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* LiveKit: hide tile overlay metadata (mic/network icons, name bar) */
+.lk-participant-metadata {
+  display: none !important;
+}
+
+@font-face {
+  font-family: 'Whitney';
+  src: url('/fonts/whitney-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney';
+  src: url('/fonts/whitney-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Base Styling */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--hover);
+  text-decoration: underline;
+}
+/* Button Component */
+.btn {
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  font-family: var(--font-heading);
+  background-color: #ff5e1a; /* Default color */
+  color: white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--hover); /* Make sure --hover is defined */
+}
+
+/* ---break---  */
+
+.dark {
+  --background: oklch(0.13 0.028 261.692);
+  --foreground: oklch(0.985 0.002 247.839);
+  --card: oklch(0.21 0.034 264.665);
+  --card-foreground: oklch(0.985 0.002 247.839);
+  --popover: oklch(0.21 0.034 264.665);
+  --popover-foreground: oklch(0.985 0.002 247.839);
+  --primary: oklch(0.928 0.006 264.531);
+  --primary-foreground: oklch(0.21 0.034 264.665);
+  --secondary: oklch(0.278 0.033 256.848);
+  --secondary-foreground: oklch(0.985 0.002 247.839);
+  --muted: oklch(0.278 0.033 256.848);
+  --muted-foreground: oklch(0.707 0.022 261.325);
+  --accent: oklch(0.278 0.033 256.848);
+  --accent-foreground: oklch(0.985 0.002 247.839);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.21 0.034 264.665);
+  --sidebar-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-accent: oklch(0.278 0.033 256.848);
+  --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+/* ---break---  */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Modern Micro-Interactions and Animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes shimmer {
+  0% { 
+    background-position: -1000px 0; 
+  }
+  100% { 
+    background-position: 1000px 0; 
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utility Classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Landing hero: aurora / gradient blob background */
+@keyframes aurora {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  33% { transform: translate(30%, -20%) scale(1.1); opacity: 0.5; }
+  66% { transform: translate(-20%, 20%) scale(0.95); opacity: 0.35; }
+}
+
+.hero-aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: aurora 12s ease-in-out infinite;
+}
+
+/* Smooth scroll with offset for fixed headers */
+html {
+  scroll-padding-top: 120px; /* Accounts for navbar height (top bar + main nav) */
+}
+
+/* Smooth scroll enhancements */
+section {
+  scroll-margin-top: 120px; /* Fallback for sections without explicit scroll-mt class */
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, .btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced smooth scrolling with easing */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Better focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid #EE8220;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Improve text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Performance optimization for animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Prevent layout shift from images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide scrollbar while maintaining scroll functionality */
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+/* For IE and Edge Legacy */
+body {
+  -ms-overflow-style: none;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 640px) {
+  h1 {
+    line-height: 1.2;
+  }
+  
+  h2, h3 {
+    line-height: 1.3;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

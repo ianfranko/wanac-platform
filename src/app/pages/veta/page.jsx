@@ -1,0 +1,257 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { FaGraduationCap, FaChartLine, FaHandshake, FaUsers, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
+
+const VetaPage = () => {
+  const [activeStep, setActiveStep] = useState(1);
+
+  const programSteps = [
+    {
+      number: 1,
+      title: "Foundation Building",
+      description: "Master the fundamentals of entrepreneurship and business planning",
+      icon: <FaGraduationCap className="w-6 h-6" />,
+      details: [
+        "Business model development",
+        "Market research fundamentals",
+        "Financial literacy basics",
+        "Legal and regulatory essentials"
+      ]
+    },
+    {
+      number: 2,
+      title: "Growth Strategy",
+      description: "Develop and validate your business strategy",
+      icon: <FaChartLine className="w-6 h-6" />,
+      details: [
+        "Market analysis and positioning",
+        "Competitive strategy development",
+        "Financial modeling and projections",
+        "Growth planning and scaling"
+      ]
+    },
+    {
+      number: 3,
+      title: "Launch Preparation",
+      description: "Prepare for successful business launch",
+      icon: <FaHandshake className="w-6 h-6" />,
+      details: [
+        "Pitch deck creation",
+        "Funding strategy development",
+        "Network building",
+        "Launch plan execution"
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white" style={{ fontFamily: "var(--font-body)" }}>
+      {/* Hero Section */}
+      <header className="relative bg-[#002147] text-white">
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: 'url("/landingpage1.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+        <div className="absolute inset-0 bg-[#002147] opacity-75"></div>
+        <div className="relative z-10 py-16 text-center">
+          <h1 className="text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+            Vetrepreneurship Academy (VETA)
+          </h1>
+          <p className="text-xl font-bold max-w-3xl mx-auto px-4">
+            Launch and Scale Your Veteran-Led Business
+          </p>
+          <p className="text-xl max-w-3xl mx-auto px-4">
+          WANAC's Vetrepreneurship Academy offers transitioning service members and veterans a robust entrepreneurial
+education, equipping you with essential skills to successfully launch, grow, and sustain your business ventures.
+Through a comprehensive, structured curriculum and expert mentorship, you'll transform your innovative ideas into
+thriving enterprises.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+              Apply Now
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Navigation Bar */}
+      <section>
+        <div className="relative w-full h-16 bg-[#002147] overflow-hidden flex items-center justify-center">
+          <nav className="relative z-10 flex space-x-8 px-4">
+            <a href="#program-overview" className="group flex flex-col items-center justify-center text-white text-base font-medium transition-colors flex-none no-underline hover:no-underline">
+              <div className="flex flex-col items-center w-full h-full px-6 py-3 transition-colors group-hover:bg-orange-500 group-hover:text-white">
+                <span className="whitespace-nowrap text-center w-full">Program Overview</span>
+                <svg className="w-4 h-4 mt-1 transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </a>
+            <a href="#how-it-works" className="group flex flex-col items-center justify-center text-white text-base font-medium transition-colors flex-none no-underline hover:no-underline">
+              <div className="flex flex-col items-center w-full h-full px-6 py-3 transition-colors group-hover:bg-orange-500 group-hover:text-white">
+                <span className="whitespace-nowrap text-center w-full">How It Works</span>
+                <svg className="w-4 h-4 mt-1 transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </a>
+            <a href="#success-stories" className="group flex flex-col items-center justify-center text-white text-base font-medium transition-colors flex-none no-underline hover:no-underline">
+              <div className="flex flex-col items-center w-full h-full px-6 py-3 transition-colors group-hover:bg-orange-500 group-hover:text-white">
+                <span className="whitespace-nowrap text-center w-full">Success Stories</span>
+                <svg className="w-4 h-4 mt-1 transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </a>
+          </nav>
+          <div 
+            className="absolute inset-0 w-full" 
+            style={{
+              animation: 'slide 20s linear infinite',
+            }}
+          >
+            <div className="h-full bg-gradient-to-r from-blue-600 via-[#002147] to-blue-600 w-[200%]"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section id="overview" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center text-[#002147]" style={{ fontFamily: "var(--font-heading)" }}>Why Choose Vetrepreneurship Academy?</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+              <h3 className="font-semibold mb-3 text-[#002147] text-xl" style={{ fontFamily: "var(--font-heading)" }}>Comprehensive Entrepreneurial Training</h3>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                <li>Master key entrepreneurial skills: ideation, business model development, financial modeling</li>
+                <li>Gain practical expertise in customer discovery, market analysis, and competitive strategy</li>
+                <li>Learn effective strategies to secure funding and attract investors</li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+              <h3 className="font-semibold mb-3 text-[#002147] text-xl" style={{ fontFamily: "var(--font-heading)" }}>Integrated and Structured Curriculum</h3>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                <li>The academy covers: Strategic business planning and market entry techniques</li>
+                <li>Rigorous financial planning, projections, and management strategies</li>
+                <li>Effective sales, marketing, and customer engagement methods</li>
+                <li>Proven methodologies for startup success and sustainable business growth</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Program Section */}
+      <section id="how-it-works" className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#002147]" style={{ fontFamily: "var(--font-heading)" }}>How the Academy Works</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Immersive Learning Modules */}
+            <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col h-full">
+              <h3 className="text-xl font-semibold text-[#002147] mb-4" style={{ fontFamily: "var(--font-heading)" }}>Immersive Learning Modules</h3>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700">
+                <li>Interactive online courses and dynamic in-person workshops</li>
+                <li>Real-world business scenario analyses and hands-on project work</li>
+              </ul>
+            </div>
+            {/* Expert-Led Mentorship */}
+            <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col h-full">
+              <h3 className="text-xl font-semibold text-[#002147] mb-4" style={{ fontFamily: "var(--font-heading)" }}>Expert-Led Mentorship</h3>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700">
+                <li>Personal mentoring from successful veteran entrepreneurs</li>
+                <li>Ongoing coaching and feedback tailored to your specific venture</li>
+              </ul>
+            </div>
+            {/* Practical Application */}
+            <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col h-full">
+              <h3 className="text-xl font-semibold text-[#002147] mb-4" style={{ fontFamily: "var(--font-heading)" }}>Practical Application</h3>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700">
+                <li>Create investor-ready business plans and pitch decks</li>
+                <li>Participate in practical simulations and real-world business challenges</li>
+              </ul>
+            </div>
+            {/* Access to Networks and Resources */}
+            <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col h-full">
+              <h3 className="text-xl font-semibold text-[#002147] mb-4" style={{ fontFamily: "var(--font-heading)" }}>Access to Networks and Resources</h3>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700">
+                <li>Connect with veteran-specific funding opportunities and industry leaders</li>
+                <li>Leverage WANAC's extensive entrepreneurial network for growth and collaboration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ideal Vetrepreneurship Candidates Section */}
+      <section id="ideal-candidates" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#002147]" style={{ fontFamily: "var(--font-heading)" }}>Ideal Vetrepreneurship Candidates</h2>
+          <div className="max-w-3xl mx-auto">
+            <ul className="list-disc pl-8 space-y-5 text-lg text-gray-700">
+              <li>Veterans and service members transitioning into entrepreneurship</li>
+              <li>Aspiring veteran entrepreneurs ready to develop and launch their business ideas</li>
+              <li>Existing veteran business owners aiming to scale their enterprises</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section id="success-stories" className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#002147]" style={{ fontFamily: "var(--font-heading)" }}>Success Stories</h2>
+          <div className="max-w-3xl mx-auto space-y-8">
+            <blockquote className="bg-white rounded-xl shadow-md p-6 text-lg italic text-gray-800 border-l-4 border-orange-500">
+              "Vetrepreneurship Academy gave me the critical tools and support to launch my startup confidently. The mentorship was invaluable."<br/>
+              <span className="block mt-4 font-semibold text-[#002147]">– Veteran Entrepreneur</span>
+            </blockquote>
+            <blockquote className="bg-white rounded-xl shadow-md p-6 text-lg italic text-gray-800 border-l-4 border-orange-500">
+              "The structured guidance and resources provided by the academy were key in scaling my business successfully."<br/>
+              <span className="block mt-4 font-semibold text-[#002147]">– Program Alumnus</span>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* Begin Your Entrepreneurial Journey Section */}
+      <section id="begin-journey" className="relative py-16 bg-gray-50 overflow-hidden">
+        {/* Background image */}
+        <div 
+          className="absolute inset-0 w-full h-full z-0"
+          style={{
+            backgroundImage: 'url("/landingpage4.jpg")', // Change to your preferred image
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.7
+          }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 z-0" style={{background: 'linear-gradient(135deg, rgba(0,33,71,0.85) 0%, rgba(255,140,0,0.6) 100%)', opacity: 0.85}} />
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold mb-6 text-center text-white drop-shadow-lg" style={{ fontFamily: "var(--font-heading)" }}>Begin Your Entrepreneurial Journey</h2>
+          <p className="max-w-2xl mx-auto text-lg text-center text-white mb-8 drop-shadow">
+            Ready to build your entrepreneurial legacy? Schedule your complimentary consultation today and discover how WANAC's Vetrepreneurship Academy can support your journey to business success.
+          </p>
+          <div className="flex justify-center">
+            <a
+              href="#"
+              className="inline-block bg-[#002147] text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-500 transition-colors text-lg shadow-md"
+            >
+              Schedule Your Complimentary Consultation &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default VetaPage; 
